@@ -1,2 +1,10 @@
-console.log("Hola desde server");
-console.log("hola de nuevo");
+import net from "node:net"
+const serverTCP = net.createServer()
+
+serverTCP.on("connection", ()=>{
+    console.log("Client Connected :)");
+})
+
+serverTCP.listen (1234, () =>{
+    console.log("server UP");
+})
